@@ -1,0 +1,48 @@
+<br>
+<div>
+    <span>Nome: </span><input type="text">
+    <br>
+    <span>Código: </span><input type="text">
+    <br>
+    <span>Horas Obrigatorias: </span><input type="number">
+    <br>
+    <span>Carga Horaria: </span><input type="number">
+    <br>
+    <span>Creditos: </span><input type="number">
+    <br>
+    <span>Departamento: </span><input type="text">
+    <br>
+    <span>Optativas: </span><input type="text">
+    <br>
+    <span>Obrigatorias: </span><input type="text">
+    <br>
+    <button (click)="cadastroCurso()">Confirmar</button>
+</div>
+
+<br>
+
+<div>
+  <h1>Lista de Cursos</h1>
+  <table>
+      <thead>
+              <th>Nome</th>
+              <th>Curso</th>
+      </thead>
+      <tbody>
+          <tr *ngFor="let curso of cursos">
+                  <td>{{curso.nome}}</td>
+                  <td>{{curso.codigo}}</td>
+                  <td>{{curso.horasObrigatorias}}</td>
+                  <td>{{curso.cargaHoraria}}</td>
+                  <td>{{curso.creditos}}</td>
+                  <td>{{curso.departamento}}</td>
+                  <td>{{curso.optativas}}</td>
+                  <td>{{curso.obrigatorias}}</td>
+          </tr>
+
+      </tbody>
+  </table>
+</div>
+
+<button (click)="carregarCursos()">Carregar Curso</button>
+

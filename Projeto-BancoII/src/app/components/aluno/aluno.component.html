@@ -1,0 +1,32 @@
+<br>
+<div>
+    <span>Nome: </span><input [(ngModel)]="nome" id="nome" name="nome" type="text">
+    <br>
+    <span>Mátricula: </span><input [(ngModel)]="matricula" id="matricula" name="matricula" type="text">
+    <br>
+    <span>Turma: </span><input [(ngModel)]="turmaAluno" id="turmaAluno" name="turmaAluno" type="text">
+    <br>
+    <button (click)="cadastroAluno()">Confirmar</button>
+</div>
+
+<br>
+
+<div>
+    <h1>Lista de Alunos</h1>
+    <table>
+        <thead>
+                <th>Nome</th>
+                <th>Aluno</th>
+        </thead>
+        <tbody>
+            <tr *ngFor="let aluno of alunos">
+                    <td>{{aluno.nome}}</td>
+                    <td>{{aluno.matricula}}</td>
+                    <td>{{aluno.turma}}</td>
+            </tr>
+
+        </tbody>
+    </table>
+</div>
+
+<button (click)="carregarAlunos()">Carregar Alunos</button>
