@@ -8,11 +8,11 @@ import { DepartamentoService } from 'src/app/services/departamento.service';
   styleUrls: ['./departamento.component.css'],
   providers: [DepartamentoService]
 })
-export class DepartamentoComponent { /*implements OnInit */
+export class DepartamentoComponent {
   nome: string;
   codigo: string;
 
-  departamentos: Departamento[];
+  departamentos;
 
   constructor(private departamentoService: DepartamentoService) { }
 
@@ -25,14 +25,17 @@ export class DepartamentoComponent { /*implements OnInit */
     departamento.nome = this.nome;
     departamento.codigo = this.codigo;
 
-      this.departamentoService.cadastrarDepartamento(departamento).subscribe(data => {
-        console.log(data);
-      },
+    this.departamentoService.cadastrarDepartamento(departamento).subscribe(data => {
+      console.log(data);
+      
+    },
       error => {
         console.log(error);
       }
     );
-
+    alert("Departamento cadastrado!");
+    this.nome = '';
+    this.codigo = '';
   }
 
   carregarDepartamentos() {
@@ -40,10 +43,10 @@ export class DepartamentoComponent { /*implements OnInit */
       console.log(data);
       this.departamentos = data;
     },
-    error => {
-      console.log(error);
-    }
-  );
+      error => {
+        console.log(error);
+      }
+    );
   }
 
 }

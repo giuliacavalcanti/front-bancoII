@@ -5,11 +5,12 @@ import { Http, Response } from '@angular/http';
 
 import 'rxjs/add/operator/map';
 
-
-@Injectable()
+@Injectable({
+    providedIn: 'root'
+  })
 export class DisciplinaService {
 
-    baseUrl = 'localhost:4200';
+    baseUrl = 'http://localhost:8080';
     disciplinaUrl = '/disciplina';
 
     constructor(private http: Http,
@@ -18,10 +19,10 @@ export class DisciplinaService {
 
     cadastrarDisciplina(disciplina: Disciplina) {
         // tslint:disable-next-line:max-line-length
-        return this.http.post( this.baseUrl + this.disciplinaUrl, JSON.stringify(disciplina), this.apiService.getRequestOptions()).map(res => res.json());
+        return this.http.post( this.baseUrl + this.disciplinaUrl + '/salvar', JSON.stringify(disciplina), this.apiService.getRequestOptions()).map(res => res.json());
     }
 
     carregarDisciplina() {
-      return this.http.get( this.baseUrl + this.disciplinaUrl, this.apiService.getRequestOptions()).map(res => res.json());
+      return this.http.get( this.baseUrl + this.disciplinaUrl + '/listarTodos', this.apiService.getRequestOptions()).map(res => res.json());
   }
 }

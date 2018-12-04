@@ -1,10 +1,8 @@
 <br>
 <div>
-  <span>Nome: </span><input type="text">
+  <span>Nome: </span><input [(ngModel)]="nome" type="text">
   <br>
-  <span>Código: </span><input type="text">
-  <br>
-  <span>Professor:</span><input type="text">
+  <span>Código: </span><input [(ngModel)]="codigo" type="text">
   <br>
   <button (click)="cadastroDepartamento()">Confirmar</button>
 </div>
@@ -19,12 +17,10 @@
               <th>Departamento</th>
       </thead>
       <tbody>
-          <tr *ngFor="let departamento of departamentos">
-                  <td>{{departamento.nome}}</td>
-                  <td>{{departamento.codigo}}</td>
-                  <td>{{departamento.professor}}</td>
+          <tr *ngFor="let dept of departamentos">
+                  <td>{{dept.nome}}</td>
+                  <td>{{dept.codigo}}</td>
           </tr>
-
       </tbody>
   </table>
 </div>

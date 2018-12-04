@@ -19,15 +19,14 @@ export class DisciplinaComponent { /*implements OnInit */
 
 
   cadastroDisciplina() {
-    console.log(this.nome);
-    console.log(this.codigo);
-
     const disciplina = new Disciplina;
     disciplina.nome = this.nome;
     disciplina.codigo = this.codigo;
 
       this.disciplinaService.cadastrarDisciplina(disciplina).subscribe(data => {
-        console.log(data);
+        alert("Disciplina cadastrada!");
+        this.codigo='';
+        this.nome='';
       },
       error => {
         console.log(error);

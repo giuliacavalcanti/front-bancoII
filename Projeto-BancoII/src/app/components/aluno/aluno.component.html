@@ -2,10 +2,16 @@
 <div>
     <span>Nome: </span><input [(ngModel)]="nome" id="nome" name="nome" type="text">
     <br>
-    <span>Mátricula: </span><input [(ngModel)]="matricula" id="matricula" name="matricula" type="text">
+    <span>Mátricula: </span><input [(ngModel)]="mat" id="matricula" name="mat" type="text">
     <br>
     <span>Turma: </span><input [(ngModel)]="turmaAluno" id="turmaAluno" name="turmaAluno" type="text">
     <br>
+    <h2>Selecione o curso: </h2>
+    <select [(ngModel)]="cursoSelected">
+        <option *ngFor="let curso of cursos" value={{curso.id}}>
+            {{curso.nome}}
+        </option>
+    </select>
     <button (click)="cadastroAluno()">Confirmar</button>
 </div>
 
@@ -15,14 +21,14 @@
     <h1>Lista de Alunos</h1>
     <table>
         <thead>
-                <th>Nome</th>
-                <th>Aluno</th>
+            <th>Nome</th>
+            <th>Aluno</th>
         </thead>
         <tbody>
             <tr *ngFor="let aluno of alunos">
-                    <td>{{aluno.nome}}</td>
-                    <td>{{aluno.matricula}}</td>
-                    <td>{{aluno.turma}}</td>
+                <td>{{aluno.nome}}</td>
+                <td>{{mat}}</td>
+                <td>{{aluno.turma}}</td>
             </tr>
 
         </tbody>

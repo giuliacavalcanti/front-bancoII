@@ -1,23 +1,23 @@
 <br>
 <div>
-    <span>Nome: </span><input type="text">
+    <span>Nome: </span><input [(ngModel)]="nome" type="text">
     <br>
-    <span>Código: </span><input type="text">
+    <span>Código: </span><input [(ngModel)]="codigo" type="text">
     <br>
-    <span>Horas Obrigatorias: </span><input type="number">
+    <span>Horas Obrigatorias: </span><input [(ngModel)]="horasObrigatorias" type="number">
     <br>
-    <span>Carga Horaria: </span><input type="number">
+    <span>Carga Horaria: </span><input [(ngModel)]="cargaHoraria" type="number">
     <br>
-    <span>Creditos: </span><input type="number">
-    <br>
-    <span>Departamento: </span><input type="text">
-    <br>
-    <span>Optativas: </span><input type="text">
-    <br>
-    <span>Obrigatorias: </span><input type="text">
-    <br>
+    <span>Creditos: </span><input [(ngModel)]="creditos" type="number">
+    <span>Departamento: </span>
+    <select  [(ngModel)]="deptId">
+        <option  *ngFor="let dept of departamentos" value={{dept.id}}>
+            {{dept.nome}}
+        </option>
+    </select>
     <button (click)="cadastroCurso()">Confirmar</button>
 </div>
+
 
 <br>
 

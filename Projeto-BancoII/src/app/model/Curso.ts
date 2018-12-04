@@ -1,3 +1,5 @@
+import { Departamento } from "./Departamento";
+
 export class Curso {
    id: number;
    codigo: string;
@@ -5,7 +7,5 @@ export class Curso {
    horasObrigatorias: string;
    cargaHoraria: number;
     creditos: number;
-    departamento: string;
-    optativas: Array<Object>;
-    obrigatorias: Array<Object>;
+    departamento: Departamento;
 }
